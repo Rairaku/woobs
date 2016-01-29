@@ -1,0 +1,8 @@
+/*
+    RESET
+*/
+* { margin: 0; padding: 0; }
+body { font: 14px/1.1 Helvetica, Sans-Serif; background: url(images/stripe.png) repeat-x; }
+.clear { clear: both; }
+img, a img { border: none; }
+input { outline: none; }

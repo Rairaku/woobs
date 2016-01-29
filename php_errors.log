@@ -1,0 +1,86 @@
+[28-Jan-2016 00:18:24 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:18:24 UTC] PHP Stack trace:
+[28-Jan-2016 00:18:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:18:24 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 00:18:24 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:18:24 UTC] PHP Stack trace:
+[28-Jan-2016 00:18:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:18:24 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 00:18:41 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:18:41 UTC] PHP Stack trace:
+[28-Jan-2016 00:18:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:18:41 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 00:18:41 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:18:41 UTC] PHP Stack trace:
+[28-Jan-2016 00:18:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:18:41 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 00:19:49 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:19:49 UTC] PHP Stack trace:
+[28-Jan-2016 00:19:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:19:49 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 00:19:49 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:19:49 UTC] PHP Stack trace:
+[28-Jan-2016 00:19:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:19:49 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 00:20:05 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:20:05 UTC] PHP Stack trace:
+[28-Jan-2016 00:20:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:20:05 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 00:20:05 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:20:05 UTC] PHP Stack trace:
+[28-Jan-2016 00:20:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:20:05 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 00:25:02 UTC] PHP Fatal error:  Class 'SendGrid' not found in /home/ubuntu/workspace/inc/class.users.inc.php on line 450
+[28-Jan-2016 00:25:02 UTC] PHP Stack trace:
+[28-Jan-2016 00:25:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:25:02 UTC] PHP   2. ColoredListsUsers->resetPassword() /home/ubuntu/workspace/db-interaction/users.php:37
+[28-Jan-2016 00:28:27 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/inc/class.users.inc.php on line 436
+[28-Jan-2016 00:28:27 UTC] PHP Stack trace:
+[28-Jan-2016 00:28:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:28:27 UTC] PHP   2. ColoredListsUsers->resetPassword() /home/ubuntu/workspace/db-interaction/users.php:37
+[28-Jan-2016 00:28:27 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/inc/class.users.inc.php on line 436
+[28-Jan-2016 00:28:27 UTC] PHP Stack trace:
+[28-Jan-2016 00:28:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:28:27 UTC] PHP   2. ColoredListsUsers->resetPassword() /home/ubuntu/workspace/db-interaction/users.php:37
+[28-Jan-2016 00:31:02 UTC] PHP Warning:  require_once(vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:31:02 UTC] PHP Stack trace:
+[28-Jan-2016 00:31:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:31:02 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 00:31:02 UTC] PHP Fatal error:  require_once(): Failed opening required 'vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:31:02 UTC] PHP Stack trace:
+[28-Jan-2016 00:31:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:31:02 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 00:32:38 UTC] PHP Warning:  require(../../../vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:32:38 UTC] PHP Stack trace:
+[28-Jan-2016 00:32:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:32:38 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 00:32:38 UTC] PHP Fatal error:  require(): Failed opening required '../../../vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:32:38 UTC] PHP Stack trace:
+[28-Jan-2016 00:32:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:32:38 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 00:33:47 UTC] PHP Fatal error:  Class 'SendGrid' not found in /home/ubuntu/workspace/inc/class.users.inc.php on line 451
+[28-Jan-2016 00:33:47 UTC] PHP Stack trace:
+[28-Jan-2016 00:33:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:33:47 UTC] PHP   2. ColoredListsUsers->resetPassword() /home/ubuntu/workspace/db-interaction/users.php:37
+[28-Jan-2016 00:58:11 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:58:11 UTC] PHP Stack trace:
+[28-Jan-2016 00:58:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:58:11 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 00:58:11 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 00:58:11 UTC] PHP Stack trace:
+[28-Jan-2016 00:58:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 00:58:11 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 01:00:48 UTC] PHP Warning:  require_once(/home/ubuntu/workspace/inc/vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 01:00:48 UTC] PHP Stack trace:
+[28-Jan-2016 01:00:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 01:00:48 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 01:00:48 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/ubuntu/workspace/inc/vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/inc/class.users.inc.php on line 2
+[28-Jan-2016 01:00:48 UTC] PHP Stack trace:
+[28-Jan-2016 01:00:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 01:00:48 UTC] PHP   2. include_once() /home/ubuntu/workspace/db-interaction/users.php:6
+[28-Jan-2016 01:04:49 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/db-interaction/users.php on line 5
+[28-Jan-2016 01:04:49 UTC] PHP Stack trace:
+[28-Jan-2016 01:04:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
+[28-Jan-2016 01:04:49 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/db-interaction/users.php on line 5
+[28-Jan-2016 01:04:49 UTC] PHP Stack trace:
+[28-Jan-2016 01:04:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/db-interaction/users.php:0
