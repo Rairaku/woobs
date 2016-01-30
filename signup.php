@@ -4,7 +4,7 @@
     $pageTitle = "Register";
     include_once "common/header.php";
  
-    if(!empty($_POST['email'])):
+    if(!empty($_POST['e'])):
         include_once "inc/class.users.inc.php";
         $users = new ColoredListsUsers($db);
         echo $users->createAccount();
