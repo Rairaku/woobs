@@ -29,34 +29,33 @@
 ?>
     <div class="container">
         <h2>Choose a Username and Password</h2>
-        <form class="form-horizontal" method="post" role="form" action="accountverify.php" name="accountverify" id="accountverify">
-          <div class="form-group">
-            <div class="col-xs-4">
-              <label for="u">Choose a Username</label>
-              <input type="text" class="form-control" id="u" name="u" placeholder="Username">
+        <form class="form-horizontal" method="post" role="form" action="accountverify.php" name="accountverifyform" id="accountverifyform">
+            <div class="form-group">
+                <div class="col-xs-4">
+                    <label for="u">Choose a Username</label>
+                    <input type="text" class="form-control" id="u" name="u" placeholder="Username">
+                </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-xs-4">
-              <label for="p">Choose a Password</label>
-              <input type="password" class="form-control" id="p" name="p" placeholder="Password">
+            <div class="form-group">
+                <div class="col-xs-4">
+                    <label for="p">Choose a Password</label>
+                    <input type="password" class="form-control" id="p" name="p" placeholder="Password">
+                </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-xs-4">
-                <label for="r">Re-Type Password</label>
-                <input type="password" class="form-control" id="r" name="r" placeholder="Re-Type Password">
+            <div class="form-group">
+                <div class="col-xs-4">
+                    <label for="r">Re-Type Password</label>
+                    <input type="password" class="form-control" id="r" name="r" placeholder="Re-Type Password">
+                </div>
             </div>
-          </div>
           <input type="hidden" name="v" value="<?php echo $_GET['v'] ?>" />
           <button type="submit" class="btn btn-success" name="verify" id="verify">Verify Your Account</button>
         </form>
     </div><!-- /.container -->
-    
 <?php
         endif;
     else:
-        echo '<meta http-equiv="refresh" content="0;/">';
+        echo '<meta http-equiv="refresh" content="0;/login.php">';
     endif;
  
     // include_once("common/ads.php");

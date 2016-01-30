@@ -13,13 +13,13 @@
     <div class="container">
         <h2>Sign up</h2>
         <form class="form-horizontal" method="post" action="signup.php" name="registerform" id="registerform">
-          <div class="form-group">
-            <div class="col-xs-4">
-                <label for="email">Email Address</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+            <div class="form-group">
+                <div class="col-xs-4">
+                    <label for="e">Email Address</label>
+                    <input type="email" class="form-control" id="e" name="e" placeholder="Email">
+                </div>
             </div>
-          </div>
-          <button type="submit" class="btn btn-success" name="register" id="register">Sign Up</button>
+            <button type="submit" class="btn btn-success" id="register" name="register">Sign Up</button>
         </form>
     </div><!-- /.container -->
         

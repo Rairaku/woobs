@@ -51,7 +51,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <?php
-                            if(isset($_SESSION['LoggedIn']) && isset($_SESSION['Username'])
+                            if(isset($_SESSION['LoggedIn']) && isset($_SESSION['Username']) && isset($_SESSION['Email']
                             && $_SESSION['LoggedIn']==1):
                         ?>
                         <li><a href="/logout.php">Log Out</a></li>

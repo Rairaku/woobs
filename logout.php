@@ -4,6 +4,7 @@
  
     unset($_SESSION['LoggedIn']);
     unset($_SESSION['Username']);
+    unset($_SESSION['Email']);
  
 ?>
  

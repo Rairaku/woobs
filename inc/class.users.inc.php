@@ -41,7 +41,7 @@ class ColoredListsUsers
      */
     public function createAccount()
     {
-        $u = trim($_POST['email']);
+        $u = trim($_POST['e']);
         $v = sha1(time());
  
         $sql = "SELECT COUNT(Email) AS theCount
@@ -86,26 +86,14 @@ class ColoredListsUsers
  
             $userID = $this->_db->lastInsertId();
             $url = dechex($userID);
- 
-            /*
-             * If the UserID was successfully
-             * retrieved, create a default list.
-             */
-            // $sql = "INSERT INTO lists (UserID, ListURL)
-            //         VALUES ($userID, $url)";
-            // if(!$this->_db->query($sql)) {
-            //     return "<h2> Error </h2>"
-            //         . "<p> Your account was created, but "
-            //         . "creating your first list failed. </p>";
-            // } else {
-                return "<h2> Success! </h2>"
+            
+            return "<h2> Success! </h2>"
                     . "<p> Your account was successfully "
                     . "created with the username <strong>$u</strong>."
                     . " Check your email!";
-            // }
         } else {
             return "<h2> Error </h2><p> Couldn't insert the "
-                . "user information into the database. </p>";
+                    . "user information into the database. </p>";
         }
     }
     
@@ -155,22 +143,23 @@ woobs.herokuapp.com')
      */
     public function verifyAccount()
     {
-        $sql = "SELECT Email
+        $sql = "SELECT Email, Username
                 FROM users
                 WHERE ver_code=:ver
-                AND SHA1(Email)=:email
+                AND SHA1(Email)=:user
                 AND verified=0";
  
         if($stmt = $this->_db->prepare($sql))
         {
             $stmt->bindParam(':ver', $_GET['v'], PDO::PARAM_STR);
-            $stmt->bindParam(':email', $_GET['e'], PDO::PARAM_STR);
+            $stmt->bindParam(':user', $_GET['e'], PDO::PARAM_STR);
             $stmt->execute();
             $row = $stmt->fetch();
             if(isset($row['Email']))
             {
                 // Logs the user in if verification is successful
                 $_SESSION['Email'] = $row['Email'];
+                $_SESSION['Username'] = $row['Username'];
                 $_SESSION['LoggedIn'] = 1;
             }
             else
@@ -268,7 +257,7 @@ woobs.herokuapp.com')
      */
     public function accountLogin()
     {
-        $sql = "SELECT Username
+        $sql = "SELECT Username, Email
                 FROM users
                 WHERE (Username=:user
                 OR Email=:user)
@@ -277,12 +266,14 @@ woobs.herokuapp.com')
         try
         {
             $stmt = $this->_db->prepare($sql);
-            $stmt->bindParam(':user', $_POST['username'], PDO::PARAM_STR);
-            $stmt->bindParam(':pass', $_POST['password'], PDO::PARAM_STR);
+            $stmt->bindParam(':user', $_POST['u'], PDO::PARAM_STR);
+            $stmt->bindParam(':pass', $_POST['p'], PDO::PARAM_STR);
             $stmt->execute();
+            $row = $stmt->fetch();
             if($stmt->rowCount()==1)
             {
-                $_SESSION['Username'] = htmlentities($_POST['username'], ENT_QUOTES);
+                $_SESSION['Email'] = $row['Email'];
+                $_SESSION['Username'] = $row['Username'];
                 $_SESSION['LoggedIn'] = 1;
                 return TRUE;
             }
@@ -290,6 +281,7 @@ woobs.herokuapp.com')
             {
                 return FALSE;
             }
+            $stmt->closeCursor();
         }
         catch(PDOException $e)
         {
@@ -306,11 +298,13 @@ woobs.herokuapp.com')
     {
         $sql = "SELECT UserID, ver_code
                 FROM users
-                WHERE Username=:user";
+                WHERE Username=:user
+                AND Email=:email";
         try
         {
             $stmt = $this->_db->prepare($sql);
             $stmt->bindParam(':user', $_SESSION['Username'], PDO::PARAM_STR);
+            $stmt->bindParam(':email', $_SESSION['Email'], PDO::PARAM_STR);
             $stmt->execute();
             $row = $stmt->fetch();
             $stmt->closeCursor();
@@ -336,13 +330,13 @@ woobs.herokuapp.com')
         try
         {
             $stmt = $this->_db->prepare($sql);
-            $stmt->bindParam(':email', $_POST['username'], PDO::PARAM_STR);
-            $stmt->bindParam(':user', $_POST['userid'], PDO::PARAM_INT);
+            $stmt->bindParam(':email', $_POST['e'], PDO::PARAM_STR);
+            $stmt->bindParam(':user', $_POST['uid'], PDO::PARAM_INT);
             $stmt->execute();
             $stmt->closeCursor();
  
             // Updates the session variable
-            $_SESSION['Email'] = htmlentities($_POST['email'], ENT_QUOTES);
+            $_SESSION['Email'] = htmlentities($_POST['e'], ENT_QUOTES);
  
             return TRUE;
         }
@@ -372,7 +366,7 @@ woobs.herokuapp.com')
             try
             {
                 $stmt = $this->_db->prepare($sql);
-                $stmt->bindParam(":user", $_POST['user-id'], PDO::PARAM_INT);
+                $stmt->bindParam(":user", $_POST['uid'], PDO::PARAM_INT);
                 $stmt->execute();
                 $stmt->closeCursor();
             }
@@ -387,7 +381,7 @@ woobs.herokuapp.com')
             try
             {
                 $stmt = $this->_db->prepare($sql);
-                $stmt->bindParam(":user", $_POST['user-id'], PDO::PARAM_INT);
+                $stmt->bindParam(":user", $_POST['uid'], PDO::PARAM_INT);
                 $stmt->execute();
                 $stmt->closeCursor();
             }
@@ -399,12 +393,14 @@ woobs.herokuapp.com')
             // Delete the user
             $sql = "DELETE FROM users
                     WHERE UserID=:user
-                    AND Username=:email";
+                    AND (Username=:username
+                    OR Email=:email)";
             try
             {
                 $stmt = $this->_db->prepare($sql);
-                $stmt->bindParam(":user", $_POST['user-id'], PDO::PARAM_INT);
-                $stmt->bindParam(":email", $_SESSION['Username'], PDO::PARAM_STR);
+                $stmt->bindParam(":user", $_POST['uid'], PDO::PARAM_INT);
+                $stmt->bindParam(":username", $_SESSION['Username'], PDO::PARAM_STR);
+                $stmt->bindParam(":email", $_SESSION['Email'], PDO::PARAM_STR);
                 $stmt->execute();
                 $stmt->closeCursor();
             }
@@ -414,13 +410,13 @@ woobs.herokuapp.com')
             }
  
             // Destroy the user's session and send to a confirmation page
-            unset($_SESSION['LoggedIn'], $_SESSION['Username']);
+            unset($_SESSION['LoggedIn'], $_SESSION['Username'], $_SESSION['Email']);
             header("Location: /gone.php");
             exit;
         }
         else
         {
-            header("Location: /account.php?delete=failed");
+            header("Location: /account.php?d=failed");
             exit;
         }
     }
@@ -439,7 +435,7 @@ woobs.herokuapp.com')
         try
         {
             $stmt = $this->_db->prepare($sql);
-            $stmt->bindParam(":email", $_POST['email'], PDO::PARAM_STR);
+            $stmt->bindParam(":email", $_POST['e'], PDO::PARAM_STR);
             $stmt->execute();
             $stmt->closeCursor();
         }
@@ -455,7 +451,7 @@ woobs.herokuapp.com')
         try
         {
             $stmt = $this->_db->prepare($sql);
-            $stmt->bindParam(":email", $_POST['email'], PDO::PARAM_STR);
+            $stmt->bindParam(":email", $_POST['e'], PDO::PARAM_STR);
             $stmt->execute();
             $row = $stmt->fetch();
             $v = $row["ver_code"];
@@ -471,7 +467,7 @@ woobs.herokuapp.com')
             
             
         try {
-            $sendgrid->send($this->sendResetEmail($_POST['email'], $v, $mail));
+            $sendgrid->send($this->sendResetEmail($_POST['e'], $v, $mail));
         } catch(\SendGrid\Exception $e) {
             echo $e->getCode();
             foreach($e->getErrors() as $er) {
