@@ -1,28 +1,21 @@
 <?php 
    include_once "common/base.php";
+   $pageTitle = "Home";
    include_once "common/header.php"; 
 ?>
-
 <div id="main">
+    <noscript>This site just doesn't work, period, without JavaScript</noscript>
+    <div class="container">
 
-   <noscript>This site just doesn't work, period, without JavaScript</noscript>
-   <div class="container">
-
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
-
+<?php
+        if(isset($_SESSION['LoggedIn']) && isset($_SESSION['Username']) && isset($_SESSION['Email']) && $_SESSION['LoggedIn']==1):
+?>
+            <h2>Under Construction...</h2>
+<?php else: ?>
+            <h2>Please Sign Up!</h2>
+            <img src="https://scontent-lax3-1.xx.fbcdn.net/hphotos-xpl1/v/t1.0-9/12565404_10153196569315933_995639197534309339_n.jpg?oh=1d979ed1d96adb189b279c6c0c296388&oe=5735DC56" class="img-responsive" alt="Responsive image">
+<?php endif; ?>
     </div><!-- /.container -->
-
-   <!-- IF LOGGED IN -->
-
-          <!-- Content here -->
-          
-   <!-- IF LOGGED OUT -->
-
-          <!-- Alternate content here -->
-
 </div>
 
 <?php include_once "common/sidebar.php"; ?>

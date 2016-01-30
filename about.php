@@ -4,7 +4,7 @@
     include_once "common/header.php";
 ?>
     <div class="container">
-        <h2>Under construction...</h2>
+        <h2>Under Construction...</h2>
     </div><!-- /.container -->
 <?php
     // include_once "common/ads.php";
