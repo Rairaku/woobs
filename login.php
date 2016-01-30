@@ -1,5 +1,8 @@
 <?php
+    require_once 'vendor/autoload.php';
+    include_once "common/base.php";
     $pageTitle = "Log In";
+    include_once "common/header.php";
 ?>
     <div class="container">
 

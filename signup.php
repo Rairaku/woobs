@@ -1,5 +1,8 @@
 <?php
+    require_once 'vendor/autoload.php';
+    include_once "common/base.php";
     $pageTitle = "Register";
+    include_once "common/header.php";
  
     if(!empty($_POST['email'])):
         include_once "inc/class.users.inc.php";

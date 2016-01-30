@@ -1,8 +1,8 @@
 <?php 
     require_once 'vendor/autoload.php';
-    require_once "common/base.php";
+    include_once "common/base.php";
     $pageTitle = "Home";
-    require_once "common/header.php"; 
+    include_once "common/header.php"; 
 ?>
 <div id="main">
     <noscript>This site just doesn't work, period, without JavaScript</noscript>
