@@ -1,7 +1,5 @@
 <?php
-    include_once "common/base.php";
-    $pageTitle = "Home";
-    include_once "common/header.php";
+    $pageTitle = "Log In";
 ?>
     <div class="container">
 
