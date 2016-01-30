@@ -4,7 +4,6 @@
     include_once "common/header.php";
  
     if(!empty($_POST['email'])):
-        require 'vendor/autoload.php';
         include_once "inc/class.users.inc.php";
         $users = new ColoredListsUsers($db);
         echo $users->createAccount();

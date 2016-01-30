@@ -3,6 +3,7 @@
     "require": {
         "sendgrid/sendgrid": "^4.0",
         "twbs/bootstrap": "^3.3",
-        "components/jquery": "^2.2"
+        "components/jquery": "^2.2",
+        "facebook/php-sdk-v4": "^5.1"
     }
 }
