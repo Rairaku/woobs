@@ -1,4 +1,5 @@
 <?php
+    require_once 'vendor/autoload.php';
     include_once "common/base.php";
     if(isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn']==1):
         $pageTitle = "Your Account";

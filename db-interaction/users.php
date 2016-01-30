@@ -2,6 +2,7 @@
  
 session_start();
 
+require_once "../vendor/autoload.php";
 include_once "../inc/constants.inc.php";
 include_once "../inc/class.users.inc.php";
 $userObj = new ColoredListsUsers();

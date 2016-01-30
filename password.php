@@ -1,4 +1,5 @@
 <?php
+    require_once 'vendor/autoload.php';
     include_once "common/base.php";
     $pageTitle = "Reset Your Password";
     include_once "common/header.php";

@@ -1,4 +1,5 @@
 <?php
+    require_once 'vendor/autoload.php';
     include_once "common/base.php";
     $pageTitle = "Verify Your Account";
     include_once "common/header.php";

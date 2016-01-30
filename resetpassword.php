@@ -1,4 +1,5 @@
 <?php
+    require_once 'vendor/autoload.php';
     include_once "common/base.php";
  
     if(isset($_GET['v']) && isset($_GET['e']))
