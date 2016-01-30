@@ -88,8 +88,9 @@
             
             <hr />
             
-            <form class="form-horizontal" method="post" role="form" action="deleteaccount.php" name="deleteaccountform" id="deleteaccountform">
+            <form class="form-horizontal" method="post" role="form" action="db-interaction/users.php" name="deleteaccountform" id="deleteaccountform">
                 <input type="hidden" name="uid" value="<?php echo $userID ?>" />
+                <input type="hidden" name="action" value="deleteaccount" />
                 <button type="submit" class="btn btn-danger" id="delete-account-submit" name="delete-account-submit">Delete Account?</button>
             </form>
         </div><!-- /.container -->
