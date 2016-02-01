@@ -21,13 +21,23 @@
 
 
 <div id="ribbon">
-    <?php
-    if($string["errors"][0]["message"] != "") {echo "<h3>Sorry, there was a problem.</h3><p>Twitter returned the following error message:</p><p><em>".$string[errors][0]["message"]."</em></p>";exit();}
-        foreach($string as $items)
-        {
-            echo "Time and Date of Tweet: ".$items['created_at']."<br />";
-            echo "Tweet: ". $items['text']."<br />";
-            echo "Tweeted by: ". $items['user']['name']."<br />";
-        }
-    ?>
+    <div class="media">
+<?php
+    // if($string["errors"][0]["message"] != "") {echo "<h3>Sorry, there was a problem.</h3><p>Twitter returned the following error message:</p><p><em>".$string[errors][0]["message"]."</em></p>";exit();}
+    foreach($string as $items)
+    {
+?>
+        <div class="media-left media-middle">
+            <a href="#">
+                <img class="media-object" src=<?php $items['profile_image_url'] ?>>
+                </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading"><?php $items['user']['name'] . $items['created_at']?></h4>
+            <?php $items['text'] ?>
+        </div>
+<?php
+    }
+?>
+    </div>
 </div>
