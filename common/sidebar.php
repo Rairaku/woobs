@@ -34,7 +34,8 @@
             </a>
         </div>
         <div class="media-body">
-            <h4 class="media-heading"><?php echo $items['user']['name'];  echo $dt->format('D M d Y H:i') ?></h4>
+            <h4 class="media-heading"><?php echo $items['user']['name'] ?></h4>
+            <h3 class="media-heading"><?php echo $dt->format('D M d Y H:i') ?></h3>
             <p><?php echo $items['text'] ?></p>
         </div>
 <?php
