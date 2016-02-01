@@ -11,7 +11,7 @@
     
     $url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
     $requestMethod = "GET";
-    $getfield = '?screen_name=bladeandsoul&count=5';
+    $getfield = '?screen_name=bladeandsoul&count=10';
     $twitter = new TwitterAPIExchange($settings);
     
     $string = json_decode($twitter->setGetfield($getfield)
@@ -35,7 +35,7 @@
         </div>
         <div class="media-body">
             <h4 class="media-heading"><?php echo $items['user']['name'] ?></h4>
-            <h6 class="media-heading"><?php echo $dt->format('D M d Y H:i') ?></h6>
+            <h6 class="media-heading"><?php echo $dt->format('D M d Y g:i') ?></h6>
             <p><?php echo $items['text'] ?></p>
         </div>
 <?php
