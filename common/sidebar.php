@@ -37,7 +37,7 @@
             <?php $items['text'] ?>
         </div>
 <?php
-echo $items['urls']['url'];
+echo $items['user']['url'];
 echo $items['user']['profile_image_url'];
 echo $items['user']['name'];
 echo $items['created_at'];
