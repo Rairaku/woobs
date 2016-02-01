@@ -17,6 +17,7 @@
     <!--<link rel="stylesheet" href="/css/typography.css" type="text/css" />-->
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="/css/dashboard.css" type="text/css" />
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" type="text/css" />
     <!-- Custom styles for this template -->
