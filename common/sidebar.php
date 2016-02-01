@@ -26,6 +26,7 @@
     // if($string["errors"][0]["message"] != "") {echo "<h3>Sorry, there was a problem.</h3><p>Twitter returned the following error message:</p><p><em>".$string[errors][0]["message"]."</em></p>";exit();}
     foreach($string as $items)
     {
+        $dt = DateTime::createFromFormat('D M d H:i:s P Y', $items['created_at']);
 ?>
         <div class="media-left media-middle">
             <a href="https://twitter.com/bladeandsoul">
@@ -33,8 +34,8 @@
             </a>
         </div>
         <div class="media-body">
-            <h4 class="media-heading">"<?php echo $items['user']['name'] ?>"</h4>
-            <p>"<?php echo $items['text'] ?>"</p>
+            <h4 class="media-heading"><?php echo $items['user']['name'];  echo $dt->format('D M d Y H:i') ?></h4>
+            <p><?php echo $items['text'] ?></p>
         </div>
 <?php
     }
