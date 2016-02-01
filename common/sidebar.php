@@ -22,24 +22,28 @@
 
 <div id="ribbon">
     <div class="media">
+        <ul class="list-group">
 <?php
     // if($string["errors"][0]["message"] != "") {echo "<h3>Sorry, there was a problem.</h3><p>Twitter returned the following error message:</p><p><em>".$string[errors][0]["message"]."</em></p>";exit();}
     foreach($string as $items)
     {
         $dt = DateTime::createFromFormat('D M d H:i:s P Y', $items['created_at']);
 ?>
-        <div class="media-left media-middle">
-            <a href="https://twitter.com/bladeandsoul">
-                <img class="media-object" src="<?php echo $items['user']['profile_image_url'] ?>" alt="Generic placeholder image">
-            </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading"><?php echo $items['user']['name'] ?></h4>
-            <h6 class="media-heading"><?php echo $dt->format('D M d Y g:i') ?></h6>
-            <p><?php echo $items['text'] ?></p>
-        </div>
+        <li class="list-group-item">
+            <div class="media-left media-middle">
+                <a href="https://twitter.com/bladeandsoul">
+                    <img class="media-object" src="<?php echo $items['user']['profile_image_url'] ?>" alt="Generic placeholder image">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading"><?php echo $items['user']['name'] ?></h4>
+                <h6 class="media-heading"><?php echo $dt->format('D M d Y g:i') ?></h6>
+                <p><?php echo $items['text'] ?></p>
+            </div>
+        </li>
 <?php
     }
 ?>
+        </ul>
     </div>
 </div>
