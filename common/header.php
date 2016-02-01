@@ -19,7 +19,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" type="text/css" />
     <!-- Custom styles for this template -->
-    <!--<link rel="stylesheet" href="/css/sidebar.css" type="text/css" />-->
+    <link rel="stylesheet" href="/css/sidebar.css" type="text/css" />
     <!--<link rel="stylesheet" href="/css/starter-template.css" type="text/css" />-->
     
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
