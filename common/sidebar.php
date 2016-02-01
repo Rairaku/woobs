@@ -29,7 +29,7 @@
 ?>
         <div class="media-left media-middle">
             <a href="<?php $items['user']['url'] ?>">
-                <img class="media-object" src="<?php $items['user']['profile_image_url'] ?>">
+                <img class="media-object" src="<?php $items['user']['profile_image_url'] ?>" alt="Generic placeholder image">
             </a>
         </div>
         <div class="media-body">
