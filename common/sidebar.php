@@ -28,7 +28,7 @@
     {
 ?>
         <div class="media-left media-middle">
-            <a href="<?php echo $items['user']['entities']['url']['urls']['url'] ?>">
+            <a href="https://twitter.com/bladeandsoul">
                 <img class="media-object" src="<?php echo $items['user']['profile_image_url'] ?>" alt="Generic placeholder image">
             </a>
         </div>
