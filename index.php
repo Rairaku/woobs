@@ -12,8 +12,6 @@
         if(isset($_SESSION['LoggedIn']) && isset($_SESSION['Username']) && isset($_SESSION['Email']) && $_SESSION['LoggedIn']==1):
 ?>
             <h2>Under Construction...</h2>
-            
-<!--<?php include_once "common/sidebar.php"; ?>-->
 <?php else: ?>
             <h2>Please Sign Up or Log In!</h2>
             <a href="https://woobs.herokuapp.com/">
