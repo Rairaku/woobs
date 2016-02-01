@@ -12,7 +12,7 @@
     <!--<link rel="stylesheet" href="/css/lists.css" type="text/css" />-->
     <!--<link rel="stylesheet" href="/css/messaging.css" type="text/css" />-->
     <!--<link rel="stylesheet" href="/css/reset.css" type="text/css" />-->
-    <!--<link rel="stylesheet" href="/css/sidebar.css" type="text/css" />-->
+    <link rel="stylesheet" href="/css/sidebar.css" type="text/css" />
     <!--<link rel="stylesheet" href="/css/structure.css" type="text/css" />-->
     <!--<link rel="stylesheet" href="/css/typography.css" type="text/css" />-->
     <!-- Bootstrap core CSS -->
