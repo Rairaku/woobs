@@ -11,7 +11,7 @@
     
     $url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
     $requestMethod = "GET";
-    $getfield = '?screen_name=bladeandsoul&count=20';
+    $getfield = '?screen_name=bladeandsoul&count=5';
     $twitter = new TwitterAPIExchange($settings);
     
     $string = json_decode($twitter->setGetfield($getfield)
@@ -30,7 +30,7 @@
         <div class="media-left media-middle">
             <a href="#">
                 <img class="media-object" src=<?php $items['profile_image_url'] ?>>
-                </a>
+            </a>
         </div>
         <div class="media-body">
             <h4 class="media-heading"><?php $items['user']['name'] . $items['created_at']?></h4>
