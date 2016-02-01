@@ -28,8 +28,8 @@
     {
 ?>
         <div class="media-left media-middle">
-            <a href="<?php $items['url'] ?>">
-                <img class="media-object" src="<?php $items['profile_image_url'] ?>">
+            <a href="<?php $items['urls']['url'] ?>">
+                <img class="media-object" src="<?php $items['user']['profile_image_url'] ?>">
             </a>
         </div>
         <div class="media-body">
@@ -37,10 +37,6 @@
             <?php $items['text'] ?>
         </div>
 <?php
-        echo $items['urls']['url'];
-        echo $items['profile_image_url'];
-        echo $items['user']['name'];
-        echo $items['created_at'];
     }
 ?>
     </div>
