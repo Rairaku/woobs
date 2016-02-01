@@ -33,8 +33,8 @@
             </a>
         </div>
         <div class="media-body">
-            <h4 class="media-heading"><?php echo $items['user']['name'] ?></h4>
-            <p><?php echo $items['text'] ?></p>
+            <h4 class="media-heading">"<?php echo $items['user']['name'] ?>"</h4>
+            <p>"<?php echo $items['text'] ?>"</p>
         </div>
 <?php
     }
