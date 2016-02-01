@@ -21,23 +21,25 @@
 
 
 <div id="ribbon">
-    <div class="media">
+    <div class="container">
+        <div class="media">
 <?php
     // if($string["errors"][0]["message"] != "") {echo "<h3>Sorry, there was a problem.</h3><p>Twitter returned the following error message:</p><p><em>".$string[errors][0]["message"]."</em></p>";exit();}
     foreach($string as $items)
     {
 ?>
-        <div class="media-left media-middle">
-            <a href=<?php $items['user']['url'] ?>>
-                <img class="media-object" src=<?php $items['user']['profile_image_url'] ?>>
-            </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading"><?php $items['user']['name'] . $items['created_at']?></h4>
-            <?php $items['text'] ?>
-        </div>
+            <div class="media-left media-middle">
+                <a href=<?php $items['user']['url'] ?>>
+                    <img class="media-object" src=<?php $items['user']['profile_image_url'] ?>>
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading"><?php $items['user']['name'] . $items['created_at']?></h4>
+                <?php $items['text'] ?>
+            </div>
 <?php
     }
 ?>
+        </div>
     </div>
 </div>
