@@ -28,12 +28,12 @@
     {
 ?>
         <div class="media-left media-middle">
-            <a href="<?php $items['user']['url'] ?>">
-                <img class="media-object" src="<?php $items['user']['profile_image_url'] ?>" alt="Generic placeholder image">
+            <a href="<?php echo $items['user']['url'] ?>">
+                <img class="media-object" src="<?php echo $items['user']['profile_image_url'] ?>" alt="Generic placeholder image">
             </a>
         </div>
         <div class="media-body">
-            <h4 class="media-heading"><?php $items['user']['name'] . $items['created_at']?></h4>
+            <h4 class="media-heading"><?php echo $items['user']['name'];  echo $items['created_at']?></h4>
             <p><?php $items['text'] ?></p>
         </div>
 <?php
