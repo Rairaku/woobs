@@ -1,4 +1,4 @@
 /*
     SIDEBAR
 */
-#ribbon { position: absolute; right: 300px; width: 500px; height: 700px; top: 50px; background: none; overflow-y: scroll;}
+#ribbon { position: absolute; right: 300px; width: 250px; height: 700px; top: 50px; background: none; overflow-y: scroll;}
