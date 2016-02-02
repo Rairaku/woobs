@@ -3,7 +3,7 @@ body {
 }
 
 p {
-     width: 300px;
+     word-wrap: break-word;
      overflow: hidden;
      text-overflow: ellipsis;
 }
