@@ -1,3 +1,9 @@
 body {
   padding-top: 50px;
 }
+
+p {
+     width: 300px;
+     overflow: hidden;
+     text-overflow: ellipsis;
+}
