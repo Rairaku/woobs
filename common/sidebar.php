@@ -42,7 +42,7 @@
 ?>
 
 
-<div id="ribbon">
+<div id="twitterfeed">
     <div class="media">
         <ul class="list-group">
 <?php
@@ -69,7 +69,7 @@
     </div>
 </div>
 
-<div id="ribbon">
+<div id="facebookfeed">
     <div class="media">
         <ul class="list-group">
 <?php
