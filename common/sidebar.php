@@ -38,7 +38,7 @@
         exit;
     }
 
-    $feed = $response->makeGraphEdge();
+    $feed = $response->getGraphEdge();
 
     echo $feed;
 ?>
