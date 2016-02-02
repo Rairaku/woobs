@@ -38,9 +38,7 @@
         exit;
     }
 
-    $graphObject = $response->getGraphObject();
-
-    echo $feed;
+    $graphEdge = $response->getGraphEdge();
 ?>
 
 
@@ -62,6 +60,28 @@
                 <h4 class="media-heading"><?php echo $items['user']['name'] ?></h4>
                 <h6 class="media-heading"><?php echo $dt->format('D M d Y g:i A') ?></h6>
                 <p><?php echo $items['text'] ?></p>
+            </div>
+        </li>
+<?php
+    }
+?>
+        </ul>
+        <ul class="list-group">
+<?php
+    foreach($graphEdge as $graphNode)
+    {
+        $dt = DateTime::createFromFormat('D M d H:i:s P Y', $graphNode['created_time']);
+?>
+        <li class="list-group-item">
+            <div class="media-left media-middle">
+                <a href="<?php echo $graphNode['from']['link'] ?>">
+                    <img class="media-object" src="<?php echo $graphNode['from']['picture'] ?>" alt="Generic placeholder image">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading"><?php echo $graphNode['from']['first_name'] ?></h4>
+                <h6 class="media-heading"><?php echo $dt->format('D M d Y g:i A') ?></h6>
+                <p><?php echo $graphNode['message'] ?></p>
             </div>
         </li>
 <?php
