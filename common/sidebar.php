@@ -37,7 +37,7 @@
             <div class="media-body">
                 <h4 class="media-heading"><?php echo $items['user']['name'] ?></h4>
                 <h6 class="media-heading"><?php echo $dt->format('D M d Y g:i') ?></h6>
-                <pre><?php echo $items['text'] ?></pre>
+                <?php echo $items['text'] ?>
             </div>
         </li>
 <?php
