@@ -24,6 +24,8 @@
         'default_graph_version' => 'v2.5',
     ]);
     
+    echo $_ENV['FBA_ID'] + '|' +$_ENV['FBA_SECRET'];
+    
     try {
         // Returns a `Facebook\FacebookResponse` object
         $response = $fb->get('/1532299883735640/feed', $_ENV['FBA_ID'] + '|' +$_ENV['FBA_SECRET']);
