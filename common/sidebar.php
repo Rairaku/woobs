@@ -38,7 +38,7 @@
         exit;
     }
 
-    $feed = $response->getGraphGroup();
+    $graphObject = $response->getGraphObject();
 
     echo $feed;
 ?>
