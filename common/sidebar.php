@@ -24,7 +24,6 @@
     <div class="media">
         <ul class="list-group">
 <?php
-    // if($string["errors"][0]["message"] != "") {echo "<h3>Sorry, there was a problem.</h3><p>Twitter returned the following error message:</p><p><em>".$string[errors][0]["message"]."</em></p>";exit();}
     foreach($string as $items)
     {
         $dt = DateTime::createFromFormat('D M d H:i:s P Y', $items['created_at']);
