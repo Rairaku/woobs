@@ -26,7 +26,7 @@
     
     $FBA_ID = $_ENV['FBA_ID'];
     $FBA_SECRET = $_ENV['FBA_SECRET'];
-    echo "$FBA_ID|$FBA_SECRET";
+    echo "$_ENV['FBA_ID']|$_ENV['FBA_SECRET']";
     
     // try {
     //     // Returns a `Facebook\FacebookResponse` object
