@@ -53,7 +53,7 @@
             <li class="list-group-item">
                 <div class="media-left media-middle">
                     <a href="https://twitter.com/bladeandsoul">
-                        <img class="media-object" src="<?php echo $items['user']['profile_image_url'] ?>" alt="Generic placeholder image">
+                        <img class="media-object" src="<?php echo $items['user']['profile_image_url_https'] ?>" alt="Generic placeholder image">
                     </a>
                 </div>
                 <div class="media-body">
