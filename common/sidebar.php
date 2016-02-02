@@ -24,7 +24,7 @@
         'default_graph_version' => 'v2.5',
     ]);
     
-    echo "$_ENV['FBA_ID']|$_ENV['FBA_SECRET']";
+    echo '$_ENV['FBA_ID']|$_ENV['FBA_SECRET']';
     
     try {
         // Returns a `Facebook\FacebookResponse` object
