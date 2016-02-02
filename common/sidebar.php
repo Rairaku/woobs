@@ -75,6 +75,7 @@
 <?php
     foreach($graphEdge as $graphNode)
     {
+        echo $graphNode;
         $dt = DateTime::createFromFormat('D M d H:i:s P Y', $graphNode['created_time']);
         echo $dt;
 ?>
