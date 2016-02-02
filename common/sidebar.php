@@ -24,15 +24,7 @@
         'default_graph_version' => 'v2.5',
     ]);
     
-    $request = new FacebookRequest(
-        $fb,
-        'GET',
-        '/1532299883735640/feed'
-    );
-    
-    $response = $request->execute();
-    $graphObject = $response->getGraphObject();
-    echo $graphObject;
+    echo $fb;
 ?>
 
 
