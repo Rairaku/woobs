@@ -38,7 +38,7 @@
         exit;
     }
 
-    $feed = $response->getGraphEdge();
+    $feed = $response->getGraphGroup();
 
     echo $feed;
 ?>
