@@ -24,7 +24,20 @@
         'default_graph_version' => 'v2.5',
     ]);
     
-    echo $fb;
+    try {
+        // Returns a `Facebook\FacebookResponse` object
+        $response = $fb->get('/1532299883735640/feed', $_ENV['FBA_ID'] + '|' +$_ENV['FBA_SECRET']);
+    } catch(Facebook\Exceptions\FacebookResponseException $e) {
+        echo 'Graph returned an error: ' . $e->getMessage();
+        exit;
+    } catch(Facebook\Exceptions\FacebookSDKException $e) {
+        echo 'Facebook SDK returned an error: ' . $e->getMessage();
+        exit;
+    }
+
+    $feed = $response->getGraphUser();
+
+    echo $feed;
 ?>
 
 
