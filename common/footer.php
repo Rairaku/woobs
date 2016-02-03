@@ -9,7 +9,7 @@
     <script src="/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="/js/skype-uri.js"></script>
+    <script src="https://www.skypeassets.com/i/scom/js/*"></script>
 </body>
 
 </html>
