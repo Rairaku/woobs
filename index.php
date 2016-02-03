@@ -4,7 +4,6 @@
     $pageTitle = "Home";
     include_once "common/header.php"; 
 ?>
-<script src="https://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
 <div id="main">
     <noscript>This site just doesn't work, period, without JavaScript</noscript>
     <div class="container">
