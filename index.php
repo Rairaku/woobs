@@ -12,12 +12,12 @@
         if(isset($_SESSION['LoggedIn']) && isset($_SESSION['Username']) && isset($_SESSION['Email']) && $_SESSION['LoggedIn']==1):
 ?>
             <h2>Under Construction...</h2>
-            <div id="BnSChat" style="width:20%;background-color:#0094ff"></div>
+            <div id="call_32" style="width:20%;background-color:#0094ff"></div>
             <script type="text/javascript" src="https://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
             <script type="text/javascript">
                 Skype.ui({
                     name: "chat",
-                    element: "BnSChat",
+                    element: "call_32",
                     participants: ["reginlaff","yeongwonhi"],
                     listParticipants:true
                 });
