@@ -21,7 +21,7 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="/css/sidebar.css" type="text/css" />
     <link rel="stylesheet" href="/css/main.css" type="text/css" />
-    <script src="https://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+    
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
 </head>
 
