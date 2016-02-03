@@ -21,7 +21,6 @@
                         listParticipants:true,
                         imageSize: 32,
                         imageColor: "white"
-                        
                     });
                 </script>
             </div>
