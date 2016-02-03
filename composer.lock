@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f4f323d3b07753f4f224a674f20c8101",
-    "content-hash": "a090dc18d92266fb891ad8d7a070ba49",
+    "hash": "39a27b14be1d5b1bc71736d9e4af72e3",
+    "content-hash": "204aa9df88ed06eeff505385ba1f1844",
     "packages": [
         {
             "name": "components/jquery",
@@ -48,61 +48,6 @@
             "description": "jQuery JavaScript Library",
             "homepage": "http://jquery.com",
             "time": "2016-01-08 23:29:41"
-        },
-        {
-            "name": "facebook/php-sdk-v4",
-            "version": "5.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facebook/facebook-php-sdk-v4.git",
-                "reference": "2c42fb3002953355f12d3c6e8003a9fd5af563d9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-sdk-v4/zipball/2c42fb3002953355f12d3c6e8003a9fd5af563d9",
-                "reference": "2c42fb3002953355f12d3c6e8003a9fd5af563d9",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "guzzlehttp/guzzle": "~5.0",
-                "mockery/mockery": "~0.8",
-                "phpunit/phpunit": "~4.0"
-            },
-            "suggest": {
-                "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Facebook\\": "src/Facebook/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Facebook Platform"
-            ],
-            "authors": [
-                {
-                    "name": "Facebook",
-                    "homepage": "https://github.com/facebook/facebook-php-sdk-v4/contributors"
-                }
-            ],
-            "description": "Facebook SDK for PHP",
-            "homepage": "https://github.com/facebook/facebook-php-sdk-v4",
-            "keywords": [
-                "facebook",
-                "sdk"
-            ],
-            "time": "2015-11-19 21:07:36"
         },
         {
             "name": "guzzle/guzzle",

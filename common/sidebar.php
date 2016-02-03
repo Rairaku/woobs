@@ -17,25 +17,6 @@
     $string = json_decode($twitter->setGetfield($getfield)
     ->buildOauth($url, $requestMethod)
     ->performRequest(),$assoc = TRUE);
-    
-    $fb = new Facebook\Facebook([
-        'app_id' => $_ENV['FBA_ID'],
-        'app_secret' => $_ENV['FBA_SECRET'],
-        'default_graph_version' => 'v2.5',
-    ]);
-    
-    try {
-        // Returns a `Facebook\FacebookResponse` object
-        $response = $fb->get('/1532299883735640/feed', $_ENV['FBA_TOKEN']);
-    } catch(Facebook\Exceptions\FacebookResponseException $e) {
-        echo 'Graph returned an error: ' . $e->getMessage();
-        exit;
-    } catch(Facebook\Exceptions\FacebookSDKException $e) {
-        echo 'Facebook SDK returned an error: ' . $e->getMessage();
-        exit;
-    }
-
-    $graphEdge = $response->getGraphEdge();
 ?>
 
 
@@ -57,28 +38,6 @@
                     <h4 class="media-heading"><?php echo $items['user']['name'] ?></h4>
                     <h6 class="media-heading"><?php echo $dt->format('D M d Y g:i A') ?></h6>
                     <p><?php echo $items['text'] ?></p>
-                </div>
-            </li>
-<?php
-    }
-?>
-        </ul>
-    </div>
-</div>
-
-<div id="facebookfeed">
-    <div class="media">
-        <ul class="list-group">
-<?php
-    foreach($graphEdge as $graphNode)
-    {
-        $dt = DateTime::createFromFormat('Y-m-d\TH:i:s', $graphNode['created_time']);
-?>
-            <li class="list-group-item">
-                <div class="media-body">
-                    <h4 class="media-heading"><?php echo $graphNode['from']['name'] ?></h4>
-                    <h6 class="media-heading"><?php echo $dt->format('D M d Y g:i A') ?></h6>
-                    <p><?php echo $graphNode['story'] ?></p>
                 </div>
             </li>
 <?php

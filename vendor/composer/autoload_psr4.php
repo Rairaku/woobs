@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
-    'Facebook\\' => array($vendorDir . '/facebook/php-sdk-v4/src/Facebook'),
 );
