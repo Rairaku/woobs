@@ -21,7 +21,6 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="/css/sidebar.css" type="text/css" />
     <link rel="stylesheet" href="/css/main.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="/phpfreechat-2.1.0/client/themes/default/jquery.phpfreechat.min.css" />
     
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
 </head>
