@@ -9,17 +9,6 @@
     <script src="/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
-    <script type="text/javascript" src="https://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
-    <script type="text/javascript">
-        Skype.ui({
-            name: "chat",
-            element: "BnSChat",
-            participants: ["reginlaff","yeongwonhi"],
-            listParticipants:true,
-            imageSize: 32,
-            imageColor: "white"
-        });
-    </script>
 </body>
 
 </html>
