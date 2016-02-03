@@ -29,7 +29,7 @@
     
     try {
         // Returns a `Facebook\FacebookResponse` object
-        $response = $fb->get('/1532299883735640/feed', "$FBA_ID|$FBA_SECRET");
+        $response = $fb->get('/me/feed', "$FBA_ID|$FBA_SECRET");
     } catch(Facebook\Exceptions\FacebookResponseException $e) {
         echo 'Graph returned an error: ' . $e->getMessage();
         exit;
