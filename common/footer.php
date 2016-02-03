@@ -9,8 +9,12 @@
     <script src="/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="/phpfreechat-2.1.0/client/pfc.min.js" type="text/javascript"></script>
-    <script type="text/javascript">$('#BnSChat').phpfreechat({ serverUrl: '/phpfreechat-2.1.1/server' });</script>
+    <?php
+        if(isset($_SESSION['LoggedIn']) && isset($_SESSION['Username']) && isset($_SESSION['Email']) && $_SESSION['LoggedIn']==1):
+    ?>
+    <script src="/phpfreechat-2.1.0/client/jquery.phpfreechat.min.js" type="text/javascript"></script>
+    <script type="text/javascript">$('#BnSChat').phpfreechat({ serverUrl: '/phpfreechat-2.1.0/server' });</script>
+    <?php endif; ?>
 </body>
 
 </html>
