@@ -18,18 +18,15 @@
     ->buildOauth($url, $requestMethod)
     ->performRequest(),$assoc = TRUE);
     
-    $FBA_ID = $_ENV['FBA_ID'];
-    $FBA_SECRET = $_ENV['FBA_SECRET'];
-    
     $fb = new Facebook\Facebook([
-        'app_id' => $FBA_ID,
-        'app_secret' => $FBA_SECRET,
+        'app_id' => $_ENV['FBA_ID'],
+        'app_secret' => $_ENV['FBA_SECRET'],
         'default_graph_version' => 'v2.5',
     ]);
     
     try {
         // Returns a `Facebook\FacebookResponse` object
-        $response = $fb->get('/1532299883735640/feed', "$FBA_ID|$FBA_SECRET");
+        $response = $fb->get('/1532299883735640/feed', $_ENV['FBA_TOKEN']);
     } catch(Facebook\Exceptions\FacebookResponseException $e) {
         echo 'Graph returned an error: ' . $e->getMessage();
         exit;
@@ -75,11 +72,11 @@
 <?php
     foreach($graphEdge as $graphNode)
     {
-        $dt = DateTime::createFromFormat('D M d H:i:s P Y', $graphNode['updated_time']);
+        $dt = DateTime::createFromFormat('Y-m-d\TH:i:s', $graphNode['created_time']);
 ?>
             <li class="list-group-item">
                 <div class="media-body">
-                    <h4 class="media-heading">Blade & Soul Exchange (BSE)</h4>
+                    <h4 class="media-heading"><?php echo $graphNode['from']['name'] ?></h4>
                     <h6 class="media-heading"><?php echo $dt->format('D M d Y g:i A') ?></h6>
                     <p><?php echo $graphNode['story'] ?></p>
                 </div>
