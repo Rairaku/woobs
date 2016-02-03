@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <script type="text/javascript" src="https://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+
     <div id="page-wrap">
 
 
