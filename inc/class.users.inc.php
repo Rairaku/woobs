@@ -6,7 +6,7 @@
  * PHP version 5
  *
  */
-class ColoredListsUsers
+class WoobsUsers
 {
     /**
      * The database object
@@ -69,9 +69,8 @@ class ColoredListsUsers
                 }
                 return "<h2> Error </h2>"
                     . "<p> There was an error sending your"
-                    . " verification email. Please "
-                    . "<a href=mailto:windmage57@msn.com>contact "
-                    . "us</a> for support. We apologize for the "
+                    . " verification email. Please go to the"
+                    . " Contact Us tab for support. We apologize for the "
                     . "inconvenience. </p>";
             }
         }
@@ -120,7 +119,7 @@ password by following the link below.
  
 Activate your account: https://woobs.herokuapp.com/accountverify.php?v=%ver%&e=%e%
  
-If you have any questions, please contact WindMage57@msn.com.
+If you have any questions, please contact via the Contact Us tab.
  
 --
 Thanks!
@@ -500,7 +499,7 @@ head over to the link below and choose a new password.
 Follow this link to reset your password:
 https://woobs.herokuapp.com/resetpassword.php?v=%ver%&e=%e%
  
-If you have any questions, please contact WindMage57@msn.com.
+If you have any questions, please contact Contact Us tab.
  
 --
 Thanks!

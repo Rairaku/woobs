@@ -5,7 +5,7 @@
         $pageTitle = "Your Account";
         include_once "common/header.php";
         include_once 'inc/class.users.inc.php';
-        $users = new ColoredListsUsers($db);
+        $users = new WoobsUsers($db);
  
         if(isset($_GET['e']) && $_GET['e']=="changed")
         {

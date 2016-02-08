@@ -6,7 +6,7 @@
  
     if(!empty($_POST['e'])):
         include_once "inc/class.users.inc.php";
-        $users = new ColoredListsUsers($db);
+        $users = new WoobsUsers($db);
         echo $users->createAccount();
     else:
 ?>

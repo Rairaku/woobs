@@ -5,13 +5,13 @@
     if(isset($_GET['v']) && isset($_GET['e']))
     {
         include_once "inc/class.users.inc.php";
-        $users = new ColoredListsUsers($db);
+        $users = new WoobsUsers($db);
         $ret = $users->verifyAccount();
     }
     elseif(isset($_POST['v']))
     {
         include_once "inc/class.users.inc.php";
-        $users = new ColoredListsUsers($db);
+        $users = new WoobsUsers($db);
         $status = $users->updatePassword() ? "changed" : "failed";
         header("Location: /account.php?p=$status");
         exit;

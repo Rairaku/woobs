@@ -15,7 +15,7 @@
 <?php
     elseif(!empty($_POST['u']) && !empty($_POST['p'])):
         include_once 'inc/class.users.inc.php';
-        $users = new ColoredListsUsers($db);
+        $users = new WoobsUsers($db);
         if($users->accountLogin()===TRUE):
             echo "<meta http-equiv='refresh' content='0;/'>";
             exit;
