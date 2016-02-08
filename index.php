@@ -5,8 +5,7 @@
     include_once "common/header.php"; 
 ?>
 <div id="main">
-    <noscript>This site just doesn't work, period, without JavaScript
-    </noscript>
+    <noscript>This site just doesn't work, period, without JavaScript</noscript>
     <div class="container">
 
 <?php
