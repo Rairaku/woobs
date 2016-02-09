@@ -9,7 +9,7 @@
     if(isset($_GET['v']) && isset($_GET['e'])):
         include_once "inc/class.users.inc.php";
         $users = new WoobsUsers($db);
-        echo $users->sendVerificationEmail($_GET['e'],$_GET['v']);
+        echo $users->sendVerificationEmail($_GET['e'],$_GET['v'],$_GET['email']);
     else:
         include_once "inc/class.users.inc.php";
         $users = new WoobsUsers($db);
