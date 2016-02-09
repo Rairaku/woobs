@@ -87,7 +87,7 @@ class WoobsUsers
             $url = dechex($userID);
             
             return "<h2> Success! </h2>"
-                    . "<p> Your account is going through an approval process "
+                    . "<p> Your account is going through an approval process. "
                     . "Please Check your email!";
         } else {
             return "<h2> Error </h2><p> Couldn't insert the "
@@ -115,7 +115,7 @@ class WoobsUsers
  
 Do you wish to approve or deny? Choose one of the following links below:
  
-Approve: https://woobs.herokuapp.com/status.php?v=%ver%&e=%e%
+Approve: https://woobs.herokuapp.com/status.php?v=%ver%&e=%e%&email=%email%
 
 Deny: https://woobs.herokuapp.com/status.php?email=%email%
  
@@ -141,7 +141,7 @@ woobs.herokuapp.com')
      * @param string $sendgm  SendGrid instance
      * @return $sendgm        Return compiled mail
      */
-    public function sendVerificationEmail($e, $ver)
+    public function sendVerificationEmail($e, $ver, $email)
     {
         $sendgrid = new SendGrid($_ENV['SG_KEY']);
         $mail = new SendGrid\Email();
