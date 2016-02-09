@@ -39,7 +39,7 @@ class WoobsUsers
      *
      * @return string    a message indicating the action status
      */
-    public function createAccount()
+    public function approveAccount()
     {
         $u = trim($_POST['e']);
         $v = sha1(time());
@@ -61,7 +61,7 @@ class WoobsUsers
             
             
             try {
-                $sendgrid->send($this->sendVerificationEmail($u, $v, $mail));
+                $sendgrid->send($this->sendApprovalEmail($u, $v, $mail));
             } catch(\SendGrid\Exception $e) {
                 echo $e->getCode();
                 foreach($e->getErrors() as $er) {
@@ -69,8 +69,8 @@ class WoobsUsers
                 }
                 return "<h2> Error </h2>"
                     . "<p> There was an error sending your"
-                    . " verification email. Please go to the"
-                    . " Contact Us tab for support. We apologize for the "
+                    . " approval email. Please go to the"
+                    . " 'Contact Us' tab for support. We apologize for the "
                     . "inconvenience. </p>";
             }
         }
@@ -87,13 +87,50 @@ class WoobsUsers
             $url = dechex($userID);
             
             return "<h2> Success! </h2>"
-                    . "<p> Your account was successfully "
-                    . "created with the username <strong>$u</strong>."
-                    . " Check your email!";
+                    . "<p> Your account is going through an approval process "
+                    . "Please Check your email!";
         } else {
             return "<h2> Error </h2><p> Couldn't insert the "
                     . "user information into the database. </p>";
         }
+    }
+
+    /**
+     * Returns compiled email to be sent to Admin with a links to approve or deny account
+     *
+     * @param string $email   The user's email address
+     * @param string $ver     The random verification code for the user
+     * @param string $sendgm  SendGrid instance
+     * @return $sendgm        Return compiled mail
+     */
+    private function sendApprovalEmail($email, $ver, $sendgm)
+    {
+        $e = sha1($email); // For verification purposes
+        $sendgm
+            ->addTo($_ENV['WOOBS_EMAIL'])
+            ->setFrom('donotreply@woobs.herokuapp.com')
+            ->setFromName('WolvesOfOld')
+            ->setSubject('[WolvesOfOld] Account Approval')
+            ->setText('User %email% wants to join the WolvesOfOld Clan Page!
+ 
+Do you wish to approve or deny? Choose one of the following links below:
+ 
+Approve: https://woobs.herokuapp.com/status.php?v=%ver%&e=%e%
+
+Deny: https://woobs.herokuapp.com/status.php?email=%email%
+ 
+--
+Thanks!
+ 
+Rairaku
+woobs.herokuapp.com')
+            ->setSubstitutions(array(
+                '%ver%' => array($ver), 
+                '%e%' => array($e),
+                '%email%' => array($email)
+            ));
+ 
+        return $sendgm;
     }
     
     /**
@@ -104,15 +141,18 @@ class WoobsUsers
      * @param string $sendgm  SendGrid instance
      * @return $sendgm        Return compiled mail
      */
-    private function sendVerificationEmail($email, $ver, $sendgm)
+    private function sendVerificationEmail($e, $ver)
     {
-        $e = sha1($email); // For verification purposes
-        $sendgm
+        $sendgrid = new SendGrid($_ENV['SG_KEY']);
+        $mail = new SendGrid\Email();
+        $mail
             ->addTo($email)
             ->setFrom('donotreply@woobs.herokuapp.com')
             ->setFromName('WolvesOfOld')
-            ->setSubject('[WolvesOfOld] Please Verify Your Account')
-            ->setText('You have a new account at WolvesOfOld Clan Page!
+            ->setSubject('[WolvesOfOld] Approve! Please Verify Your Account')
+            ->setText('Your account has been approved! 
+            
+You now have a new account at WolvesOfOld Clan Page!
  
 To get started, please activate your account, choose a username, and choose a
 password by following the link below.
@@ -129,10 +169,84 @@ woobs.herokuapp.com')
             ->setSubstitutions(array(
                 '%ver%' => array($ver), 
                 '%e%' => array($e)
-            ))
-        ;
+            ));
  
-        return $sendgm;
+        try {
+            $sendgrid->send($mail);
+        } catch(\SendGrid\Exception $e) {
+            echo $e->getCode();
+            foreach($e->getErrors() as $er) {
+                echo $er;
+            }
+            return "<h2> Error </h2>"
+                . "<p> There was an error sending"
+                . " verification email. </p>";
+        }
+        
+        return "<h2> Email has been sent! </h2>";
+    }
+    
+        /**
+     * Returns compiled email to be sent to the user with deny message
+     *
+     * @param string $email   The user's email address
+     * @param string $ver     The random verification code for the user
+     * @param string $sendgm  SendGrid instance
+     * @return $sendgm        Return compiled mail
+     */
+    private function sendDenyEmail($email)
+    {
+        $sendgrid = new SendGrid($_ENV['SG_KEY']);
+        $mail = new SendGrid\Email();
+        $mail
+            ->addTo($email)
+            ->setFrom('donotreply@woobs.herokuapp.com')
+            ->setFromName('WolvesOfOld')
+            ->setSubject('[WolvesOfOld] Account Denied')
+            ->setText("We're sorry. . .
+ 
+Your request has been denied. 
+
+Please contact us via the 'Contact Us' tab or ask one of our Clan admins.
+ 
+Thank you for your interest in the WolvesOfOld!
+ 
+--
+Thanks!
+ 
+Rairaku
+woobs.herokuapp.com")
+            ->setSubstitutions(array(
+                '%email%' => array($email)
+            ));
+            
+        try {
+            $sendgrid->send($mail);
+        } catch(\SendGrid\Exception $e) {
+            echo $e->getCode();
+            foreach($e->getErrors() as $er) {
+                echo $er;
+            }
+            return "<h2> Error </h2>"
+                . "<p> There was an error sending"
+                . " deny email. </p>";
+        }
+            
+        $sql = "DELETE FROM users
+                WHERE Email=:email";
+        if($stmt = $this->_db->prepare($sql)) {
+            $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+            $stmt->execute();
+            $stmt->closeCursor();
+ 
+            $userID = $this->_db->lastInsertId();
+            $url = dechex($userID);
+            
+            return "<h2> Email has been removed. </h2>";
+        } else {
+            return "<h2> Error </h2><p> Couldn't delete the "
+                    . "user information from the database. </p>";
+        }
     }
     
     /**

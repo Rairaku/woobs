@@ -7,7 +7,7 @@
     if(!empty($_POST['e'])):
         include_once "inc/class.users.inc.php";
         $users = new WoobsUsers($db);
-        echo $users->createAccount();
+        echo $users->approveAccount();
     else:
 ?>
     <div class="container">
