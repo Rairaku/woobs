@@ -141,7 +141,7 @@ woobs.herokuapp.com')
      * @param string $sendgm  SendGrid instance
      * @return $sendgm        Return compiled mail
      */
-    private function sendVerificationEmail($e, $ver)
+    public function sendVerificationEmail($e, $ver)
     {
         $sendgrid = new SendGrid($_ENV['SG_KEY']);
         $mail = new SendGrid\Email();
@@ -194,7 +194,7 @@ woobs.herokuapp.com')
      * @param string $sendgm  SendGrid instance
      * @return $sendgm        Return compiled mail
      */
-    private function sendDenyEmail($email)
+    public function sendDenyEmail($email)
     {
         $sendgrid = new SendGrid($_ENV['SG_KEY']);
         $mail = new SendGrid\Email();
